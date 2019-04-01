@@ -152,19 +152,19 @@ with open(sosifil, "w", encoding='utf-8') as sosi_file:
             H1 = str(round(z1 * 1000, 0))[0:-2]
             H2 = str(round(z2 * 1000, 0))[0:-2]
 
-            sosi_file.write(".KURVE " + KURVE + ":" + "\n")
-            sosi_file.write("..OBJTYPE GeofLinjeInfo" + "\n")
-            sosi_file.write("..ID " + pel_ID + "\n")
-            sosi_file.write("..DATAFANGSTDATO "
-                            + DATAFANGSTDATO + "\n")  # Fra riggrapport
-            sosi_file.write("..BORLENGDE " + BORLENGDE + "\n")
-            # Settes fast i begynnelsen av denne fila
-            sosi_file.write("..KVALITET " + KVALITET + "\n")
-            sosi_file.write("..NØH" + "\n")
-            sosi_file.write(N + " " + E + " " + H1 + "\n")
-            sosi_file.write(N + " " + E + " " + H2 + "\n")
-    sosi_file.write(".SLUTT")
+            sosi_objekt = (
+                f".KURVE {KURVE}:\n"
+                f"..OBJTYPE GeofLinjeInfo\n"
+                f"..ID {pel_ID}\n"
+                f"..DATAFANGSTDATO {DATAFANGSTDATO}\n"  # Fra riggrapport
+                f"..BORLENGDE {BORLENGDE}\n"
+                f"..KVALITET {KVALITET}\n"  # Fast verdi for alle objekter
+                f"..NØH\n"
+                f"{N} {E} {H1}\n"
+                f"{N} {E} {H2}")
 
+            print(sosi_objekt, file=sosi_file)
+    print(".SLUTT", file=sosi_file)
 
 print
 print("Data for "

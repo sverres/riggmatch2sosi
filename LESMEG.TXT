@@ -1,0 +1,18 @@
+Filer:
+
+LESMEG.TXT
+
+riggmatch2sosi.py   Python-program. Se i toppen av denne fila og juster parametre for filnavn, kvalitet, etc.
+sosihode.txt        Denne kopieres inn i ny SOSI-fil. Her må det justeres koordinater for område etc.
+
+KS_PEL_1.xlsx       Excel-fil med data fra borerigg. 
+KS_PEL_1.csv        Data fra Excel-fil eksportert til komma-separert format (CSV).
+            Hvis annen inndatafil brukes må det filnavnet skrives inn i riggmatch2sosi.py.
+KS_Pel_1_Test_Sosi.kof  Fil med koordinater for toppen av pelene.
+
+KS_PEL_1.SOS        Fil generert v.h.a. programmet.
+
+Høgkolen i Gjøvik 11.11.11
+Sverre stikbakke
+
+

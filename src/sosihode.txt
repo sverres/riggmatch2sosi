@@ -1,0 +1,17 @@
+.HODE
+..TEGNSETT UTF-8
+..OMRÅDE
+...MIN-NØ 6443450  438920
+...MAX-NØ 6443460  438940
+..SOSI-VERSJON 4.0
+..SOSI-NIVÅ 3
+..TRANSPAR
+...KOORDSYS 22
+...ORIGO-NØ 0  0
+...ENHET 0.001
+...VERT-DATUM NN54
+..INNHOLD
+...PRODUKTSPEK Anvendt geofysikk 4.0
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
