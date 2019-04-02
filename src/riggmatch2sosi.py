@@ -30,7 +30,7 @@ delta_z = 0.5  # Avstand målepunkt på rigg til bakkenivå
 
 # Leser inn riggdata
 
-Rigg_data = {}  # Python dictionary
+rigg_data = {}  # Python dictionary
 
 with open(riggrapport) as rigg_file:
     for pel in rigg_file.readlines():
@@ -55,7 +55,7 @@ with open(riggrapport) as rigg_file:
          Dummy) = pel.split(";")
 
         # Lagrer aktuelle data om hver pel
-        Rigg_data[Column_name] = (
+        rigg_data[Column_name] = (
             Column_name,
             Date,
             Time,
@@ -64,7 +64,7 @@ with open(riggrapport) as rigg_file:
 
 # Leser inn koordinatfil
 
-Pos_data = {}   # Python dictionary
+pos_data = {}   # Python dictionary
 
 x_min = 999999.0
 x_max = 0.0
@@ -83,7 +83,7 @@ with open(posisjoner) as pos_file:
              Hoyde_XYZ0) = pel.split()
 
             # Lagrer aktuelle data om hver pel
-            Pos_data[Id] = (
+            pos_data[Id] = (
                 Id,
                 Ost,
                 Nord,
@@ -110,25 +110,25 @@ with open(sosihode, encoding='utf-8') as sosi_hode_file:
 
 
 # Matcher data fra de to filene basert på "Column_name" og "Id" som er
-# nøkler i dictionariene Rigg_data og Pos_data.
+# nøkler i dictionariene rigg_data og pos_data.
 
 with open(sosifil, "w", encoding='utf-8') as sosi_file:
     sosi_file.write(hode)
 
     kurvenr = 0
 
-    for pel in Rigg_data:
-        if Pos_data.get(pel):
-            # Henter ut verdier fra Pos_data
-            pel_data_pos = Pos_data.get(pel)
+    for pel in rigg_data:
+        if pos_data.get(pel):
+            # Henter ut verdier fra pos_data
+            pel_data_pos = pos_data.get(pel)
 
             pel_ID = pel_data_pos[0]
             x = float(pel_data_pos[1])
             y = float(pel_data_pos[2])
             z2 = float(pel_data_pos[3])  # innmålt høyde topp av pel
 
-            # Henter ut verdier fra Rigg_data
-            pel_data_rigg = Rigg_data.get(pel)
+            # Henter ut verdier fra rigg_data
+            pel_data_rigg = rigg_data.get(pel)
 
             boredybde_rigg = pel_data_rigg[3].replace(",", ".")
             boredybde = float(boredybde_rigg) - delta_z
